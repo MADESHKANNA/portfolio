@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microverse - Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+
+    <section id="welcome">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Hi, <span>I'm MADESH KANNA S,</span></h1>
+                    <h2>Welcome to our Portfolio</h2>
+                    <p>I am a passionate Computer Science and Engineering student with a strong enthusiasm for learning and developing new skills. With experience in programming languages like Python and C.I have also completed internships in Full Stack Development and Data Science. I am eager to leverage my skills and knowledge in a professional environment</p>
+                    <button class="btn btn-warning">Project</button>
+                    <button class="btn btn-warning">Contact</button>
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project">
+        <div class="container">
+            <div class="hi">
+            <h2>Projects</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card shadow-lg ">
+                        <img class="card-img-top" src="{{ url_for('static', filename='img/1.png') }}" alt="Project 1">
+
+                        <div class="card-body">
+                          <p class="card-text">Career Prediction Based on Multiple Intelligences</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card ">
+                        <img class="card-img-top" src="{{ url_for('static', filename='img/2.png') }}" alt="Project 1">
+
+                        <div class="card-body">
+                          <p class="card-text">Medical Report Generator</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card ">
+                        <img class="card-img-top" src="{{ url_for('static', filename='img/3.png') }}" alt="Project 1">
+
+                        <div class="card-body">
+                          <p class="card-text">AI CHATBOT</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card ">
+                        <img class="card-img-top" src="{{ url_for('static', filename='img/4.png') }}" alt="Project 1">
+
+                        <div class="card-body">
+                          <p class="card-text">E-commerce</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section id="contact">
+        <h1>Let's work together...</h1>
+        <h4>How do you take your coffee?</h4>
+        <p><a href="">Email: madeshkanna2005@gmail.com</a></p>
+        <p><a href="">Call us: +91 9345530354</a></p>
+    </section>
+    <script>
+const buttons = document.querySelectorAll(".btn-warning");
+const projectBtn = buttons[0];
+const contactBtn = buttons[1];
+projectBtn.addEventListener("click", () => {
+    document.getElementById("project").scrollIntoView({
+        behavior: "smooth"
+    });
+});
+
+contactBtn.addEventListener("click", () => {
+    document.getElementById("contact").scrollIntoView({
+        behavior: "smooth"
+    });
+});
+
+const cards = document.querySelectorAll(".card");
+
+cards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+        alert("You selected Project " + (index + 1));
+    });
+});
+
+const allButtons = document.querySelectorAll(".btn");
+
+allButtons.forEach(btn => {
+    btn.addEventListener("mouseenter", () => {
+        btn.style.transform = "scale(1.1)";
+        btn.style.transition = "0.3s";
+    });
+
+    btn.addEventListener("mouseleave", () => {
+        btn.style.transform = "scale(1)";
+    });
+});
+
+const contact = document.getElementById("contact");
+const year = new Date().getFullYear();
+contact.innerHTML += `<p><b>© ${year} MADESH KANNA S</b></p>`;
+
+    </script>
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
